@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>주식 분석 리포트</title>
+    <title>주식 분석 리포트 - 테스트 중...</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -37,17 +37,6 @@
             color: #666;
             margin: 5px 0;
         }
-        .section {
-            margin-bottom: 30px;
-        }
-        .section-title {
-            font-size: 1.4em;
-            font-weight: bold;
-            color: #333;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
-            margin-bottom: 15px;
-        }
         .info-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -68,72 +57,6 @@
         .info-value {
             color: #333;
         }
-        .driver-card {
-            background: #fff;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 15px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .driver-title {
-            font-size: 1.2em;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 10px;
-        }
-        .positive {
-            border-left: 4px solid #28a745;
-        }
-        .negative {
-            border-left: 4px solid #dc3545;
-        }
-        .direction {
-            display: inline-block;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 30px;
-            color: white;
-            font-weight: bold;
-            margin-right: 10px;
-        }
-        .direction.positive {
-            background-color: #28a745;
-        }
-        .direction.negative {
-            background-color: #dc3545;
-        }
-        .bullish-bearish {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-        .bullish {
-            background: #d4edda;
-            border: 1px solid #c3e6cb;
-            border-radius: 5px;
-            padding: 20px;
-        }
-        .bearish {
-            background: #f8d7da;
-            border: 1px solid #f5c6cb;
-            border-radius: 5px;
-            padding: 20px;
-        }
-        .sources {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 5px;
-            border: 1px solid #e9ecef;
-        }
-        .source-item {
-            margin-bottom: 10px;
-            padding: 8px;
-            background: white;
-            border-radius: 3px;
-        }
         .highlight {
             background: #fff3cd;
             border: 1px solid #ffeaa7;
@@ -141,86 +64,46 @@
             padding: 15px;
             margin: 15px 0;
         }
-        @media (max-width: 768px) {
-            .info-grid, .bullish-bearish {
-                grid-template-columns: 1fr;
-            }
+        .debug {
+            background: #e9ecef;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: monospace;
+            font-size: 0.9em;
         }
     </style>
 </head>
 <body>
     <div class="container">
-
         <div class="header">
-            <h1 class="ticker"></h1>
-            <div class="company-name"></div>
-            <div style="color: #888; margin-top: 10px;">업데이트: </div>
+            <h1 class="ticker">테스트 중...</h1>
+            <div class="company-name">데이터 로딩 중...</div>
+            <div style="color: #888; margin-top: 10px;">업데이트: 2025-08-01</div>
         </div>
 
-        <div class="section">
-            <div class="section-title">기본 정보</div>
-            <div class="info-grid">
-                <div class="info-item">
-                    <div class="info-label">전일 종가</div>
-                    <div class="info-value"></div>
-                </div>
-                <div class="info-item">
-                    <div class="info-label">시가총액</div>
-                    <div class="info-value"></div>
-                </div>
-                <div class="info-item">
-                    <div class="info-label">다음 실적 발표</div>
-                    <div class="info-value"></div>
-                </div>
-                <div class="info-item">
-                    <div class="info-label">Catalyst 일정</div>
-                    <div class="info-value"></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <div class="section-title">핵심 투자 포인트</div>
-            <div class="highlight">
-                
-            </div>
-        </div>
-
-        <div class="section">
-            <div class="section-title">High Impact Drivers</div>
-
-        </div>
-
-        <div class="section">
-            <div class="section-title">Medium / Low Impact Drivers</div>
+        <div class="info-grid">
             <div class="info-item">
-                
+                <div class="info-label">전일 종가</div>
+                <div class="info-value">N/A</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">시가총액</div>
+                <div class="info-value">N/A</div>
             </div>
         </div>
 
-        <div class="section">
-            <div class="section-title">투자 논리</div>
-            <div class="bullish-bearish">
-                <div class="bullish">
-                    <h4 style="margin-top: 0; color: #155724;">📈 Bullish 논리</h4>
-                    
-                </div>
-                <div class="bearish">
-                    <h4 style="margin-top: 0; color: #721c24;">📉 Bearish 논리</h4>
-                    
-                </div>
-            </div>
+        <div class="highlight">
+            <strong>핵심 투자 포인트:</strong><br>
+            데이터를 확인하는 중입니다.
         </div>
 
-        <div class="section">
-            <div class="section-title">참고 자료</div>
-            <div class="sources">
-
-            </div>
-        </div>
-
-        <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; color: #888;">
-            <small>이 리포트는 자동 생성되었으며, 투자 결정의 참고용으로만 사용하시기 바랍니다.</small>
+        <div class="debug">
+            <strong>디버그 정보:</strong><br>
+            입력 데이터 개수: 1<br>
+            파싱된 항목 수: undefined<br>
+            데이터 소스: 실제 데이터
         </div>
     </div>
 </body>
