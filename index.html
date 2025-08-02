@@ -4,7 +4,7 @@
     <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>📈 주식 정보 - Stock Info</title>
+      <title>📊 JSON 데이터 분석</title>
       <style>
         * {
           margin: 0;
@@ -13,7 +13,7 @@
         }
         
         body {
-          font-family: 'Segoe UI', 'Malgun Gothic', sans-serif;
+          font-family: 'Segoe UI', 'Malgun Gothic', -apple-system, BlinkMacSystemFont, sans-serif;
           line-height: 1.6;
           background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
           min-height: 100vh;
@@ -21,7 +21,7 @@
         }
         
         .container {
-          max-width: 800px;
+          max-width: 1000px;
           margin: 0 auto;
           background: rgba(255, 255, 255, 0.95);
           border-radius: 16px;
@@ -43,7 +43,7 @@
           font-weight: 700;
         }
         
-        .header .subtitle {
+        .subtitle {
           font-size: 1.1rem;
           opacity: 0.9;
           font-weight: 300;
@@ -53,8 +53,22 @@
           padding: 30px;
         }
         
-        .section {
+        .metadata {
+          background: #f8f9fa;
+          padding: 20px;
+          border-radius: 8px;
           margin-bottom: 30px;
+          border-left: 4px solid #3498db;
+        }
+        
+        .metadata p {
+          margin: 8px 0;
+          color: #495057;
+          font-size: 0.9rem;
+        }
+        
+        .section {
+          margin-bottom: 40px;
         }
         
         .section-title {
@@ -93,37 +107,76 @@
           font-weight: 600;
           color: #2c3e50;
           padding: 18px 20px;
-          width: 35%;
+          width: 30%;
           border-right: 1px solid #e9ecef;
           font-size: 0.95rem;
+          vertical-align: top;
         }
         
         .value-cell {
           padding: 18px 20px;
           color: #495057;
           font-size: 0.95rem;
+          vertical-align: top;
         }
         
         .price {
           color: #27ae60;
           font-weight: 700;
-          font-size: 1.1rem;
         }
         
         .market-cap {
           color: #3498db;
           font-weight: 600;
-          font-size: 1.05rem;
         }
         
-        .investment-point {
+        .link {
+          color: #e74c3c;
+          text-decoration: none;
+          word-break: break-all;
+        }
+        
+        .link:hover {
+          text-decoration: underline;
+        }
+        
+        .number {
+          color: #8e44ad;
+          font-weight: 600;
+        }
+        
+        .boolean {
+          color: #f39c12;
+          font-weight: 600;
+        }
+        
+        .null {
+          color: #95a5a6;
+          font-style: italic;
+        }
+        
+        .long-text {
           line-height: 1.7;
-          color: #2c3e50;
-          background: #ecf0f1;
-          padding: 15px;
-          border-radius: 8px;
-          border-left: 4px solid #e74c3c;
-          font-size: 0.95rem;
+        }
+        
+        .expandable-text {
+          position: relative;
+        }
+        
+        .toggle-btn {
+          background: #3498db;
+          color: white;
+          border: none;
+          padding: 5px 12px;
+          border-radius: 4px;
+          cursor: pointer;
+          font-size: 0.8rem;
+          margin-top: 8px;
+          transition: background-color 0.3s;
+        }
+        
+        .toggle-btn:hover {
+          background: #2980b9;
         }
         
         .timestamp {
@@ -135,14 +188,12 @@
           font-size: 0.85rem;
         }
         
-        /* 반응형 디자인 */
         @media (max-width: 768px) {
           body {
             padding: 10px;
           }
           
           .container {
-            margin: 0;
             border-radius: 12px;
           }
           
@@ -159,7 +210,7 @@
           }
           
           .key-cell {
-            width: 40%;
+            width: 35%;
             padding: 15px;
             font-size: 0.9rem;
           }
@@ -173,45 +224,44 @@
             font-size: 1.2rem;
           }
         }
-        
-        /* 인쇄 스타일 */
-        @media print {
-          body {
-            background: white;
-            padding: 0;
-          }
+      </style>
+      <script>
+        function toggleText(button) {
+          const container = button.parentElement;
+          const preview = container.querySelector('.text-preview');
+          const full = container.querySelector('.text-full');
           
-          .container {
-            box-shadow: none;
-            background: white;
-          }
-          
-          .header {
-            background: #2c3e50 !important;
-            -webkit-print-color-adjust: exact;
+          if (full.style.display === 'none') {
+            preview.style.display = 'none';
+            full.style.display = 'block';
+            button.textContent = '접기';
+          } else {
+            preview.style.display = 'block';
+            full.style.display = 'none';
+            button.textContent = '더보기';
           }
         }
-      </style>
+      </script>
     </head>
     <body>
       <div class="container">
         <div class="header">
-          <h1>📈 기본 정보</h1>
-          <div class="subtitle">주식 투자 정보 리포트</div>
+          <h1>📊 JSON 데이터 분석</h1>
+          <div class="subtitle">JSON 데이터 리포트</div>
         </div>
         
         <div class="content">
-          <div class="section">
-            <h2 class="section-title">📋 기본 정보</h2>
-            <table class="info-table">
-              
-            </table>
-          </div>
           
+    <div class="metadata">
+      <p><strong>생성 시간:</strong> 2025. 8. 2. 오후 12:06:09</p>
+      <p><strong>데이터 타입:</strong> Object</p>
+      <p><strong>항목 수:</strong> 1</p>
+    </div>
+  
           
           
           <div class="timestamp">
-            📅 리포트 생성 시간: 2025. 8. 2. 오전 9:17:20
+            📅 리포트 생성 시간: 2025. 8. 2. 오후 12:06:09
           </div>
         </div>
       </div>
