@@ -1,18 +1,225 @@
 
-  <h2>📊 기본 정보</h2>
-  <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; font-family: sans-serif;">
-    <thead style="background-color:#f2f2f2;">
+    <!DOCTYPE html>
+    <html lang="ko">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>📈 주식 정보 - Stock Info</title>
+      <style>
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+        
+        body {
+          font-family: 'Segoe UI', 'Malgun Gothic', sans-serif;
+          line-height: 1.6;
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          min-height: 100vh;
+          padding: 20px;
+        }
+        
+        .container {
+          max-width: 800px;
+          margin: 0 auto;
+          background: rgba(255, 255, 255, 0.95);
+          border-radius: 16px;
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+          overflow: hidden;
+          backdrop-filter: blur(10px);
+        }
+        
+        .header {
+          background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+          color: white;
+          padding: 30px;
+          text-align: center;
+        }
+        
+        .header h1 {
+          font-size: 2.2rem;
+          margin-bottom: 10px;
+          font-weight: 700;
+        }
+        
+        .header .subtitle {
+          font-size: 1.1rem;
+          opacity: 0.9;
+          font-weight: 300;
+        }
+        
+        .content {
+          padding: 30px;
+        }
+        
+        .section {
+          margin-bottom: 30px;
+        }
+        
+        .section-title {
+          color: #2c3e50;
+          font-size: 1.4rem;
+          margin-bottom: 20px;
+          padding-bottom: 10px;
+          border-bottom: 3px solid #3498db;
+          font-weight: 600;
+        }
+        
+        .info-table {
+          width: 100%;
+          border-collapse: collapse;
+          background: white;
+          border-radius: 12px;
+          overflow: hidden;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        
+        .info-table tr {
+          border-bottom: 1px solid #f1f2f6;
+          transition: background-color 0.3s ease;
+        }
+        
+        .info-table tr:hover {
+          background-color: #f8f9ff;
+        }
+        
+        .info-table tr:last-child {
+          border-bottom: none;
+        }
+        
+        .key-cell {
+          background: #f8f9fa;
+          font-weight: 600;
+          color: #2c3e50;
+          padding: 18px 20px;
+          width: 35%;
+          border-right: 1px solid #e9ecef;
+          font-size: 0.95rem;
+        }
+        
+        .value-cell {
+          padding: 18px 20px;
+          color: #495057;
+          font-size: 0.95rem;
+        }
+        
+        .price {
+          color: #27ae60;
+          font-weight: 700;
+          font-size: 1.1rem;
+        }
+        
+        .market-cap {
+          color: #3498db;
+          font-weight: 600;
+          font-size: 1.05rem;
+        }
+        
+        .investment-point {
+          line-height: 1.7;
+          color: #2c3e50;
+          background: #ecf0f1;
+          padding: 15px;
+          border-radius: 8px;
+          border-left: 4px solid #e74c3c;
+          font-size: 0.95rem;
+        }
+        
+        .timestamp {
+          text-align: center;
+          margin-top: 30px;
+          padding-top: 20px;
+          border-top: 1px solid #e9ecef;
+          color: #7f8c8d;
+          font-size: 0.85rem;
+        }
+        
+        /* 반응형 디자인 */
+        @media (max-width: 768px) {
+          body {
+            padding: 10px;
+          }
+          
+          .container {
+            margin: 0;
+            border-radius: 12px;
+          }
+          
+          .header {
+            padding: 20px;
+          }
+          
+          .header h1 {
+            font-size: 1.8rem;
+          }
+          
+          .content {
+            padding: 20px;
+          }
+          
+          .key-cell {
+            width: 40%;
+            padding: 15px;
+            font-size: 0.9rem;
+          }
+          
+          .value-cell {
+            padding: 15px;
+            font-size: 0.9rem;
+          }
+          
+          .section-title {
+            font-size: 1.2rem;
+          }
+        }
+        
+        /* 인쇄 스타일 */
+        @media print {
+          body {
+            background: white;
+            padding: 0;
+          }
+          
+          .container {
+            box-shadow: none;
+            background: white;
+          }
+          
+          .header {
+            background: #2c3e50 !important;
+            -webkit-print-color-adjust: exact;
+          }
+        }
+      </style>
+    </head>
+    <body>
+      <div class="container">
+        <div class="header">
+          <h1>📈 기본 정보</h1>
+          <div class="subtitle">주식 투자 정보 리포트</div>
+        </div>
+        
+        <div class="content">
+          <div class="section">
+            <h2 class="section-title">📋 기본 정보</h2>
+            <table class="info-table">
+              
       <tr>
-        <th>항목</th>
-        <th>값</th>
+        <td class="key-cell"></td>
+        <td class="value-cell"></td>
       </tr>
-    </thead>
-    <tbody>
-
-    <tr>
-      <td>undefined</td>
-      <td>undefined</td>
-    </tr>
+    
+            </table>
+          </div>
+          
+          
+          
+          <div class="timestamp">
+            📅 리포트 생성 시간: 2025. 8. 2. 오전 9:06:45
+          </div>
+        </div>
+      </div>
+    </body>
+    </html>
   
-    </tbody>
-  </table>
